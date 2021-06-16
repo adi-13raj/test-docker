@@ -5,9 +5,13 @@ node() {
   }
 
   stage('Building') {
-            def  my_image = docker.build("test-app:${env.BUILD_ID}")
+            sh """
+            echo "hello this is testing"
+            my_image = docker.build("test-app:${env.BUILD_ID}")
             echo $my_image
             echo my_image
+            """
+
         }
   stage('Test') {
        // Assess the image
