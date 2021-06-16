@@ -7,9 +7,9 @@ node {
   
   stage('Building') {
             echo "hello there"
+            echo $customImage
             sh """
             echo "hello this is testing"
-            docker build -t testing:latest .
             """
 
         }
