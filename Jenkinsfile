@@ -5,12 +5,13 @@ node() {
   }
 
   stage('Building') {
-            sh """
-            echo "hello this is testing"
-            my_image = docker.build("test-app:${env.BUILD_ID}")
-            echo $my_image
-            echo my_image
-            """
+            echo "hello there"
+            #sh """
+            #echo "hello this is testing"
+            #my_image = docker.build("test-app:${env.BUILD_ID}")
+            #echo $my_image
+            #echo my_image
+            #"""
 
         }
   stage('Test') {
