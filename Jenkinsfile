@@ -5,10 +5,9 @@ node() {
   }
 
   stage('Building') {
-      dir('jenkins-k8s-slave') {
             def  my_image = docker.build("test-app:${env.BUILD_ID}")
+            echo my_image 
         }
-      }
   stage('Test') {
        // Assess the image
        assessContainerImage failOnPluginError: true,
