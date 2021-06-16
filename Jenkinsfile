@@ -4,7 +4,7 @@ node {
   stage('Checkout') {
     checkout(scm)
   }
-  def customImage = docker.build($imagename)
+  def customImage = docker.build("$imagename")
   
   stage('Building') {
             echo "hello there"
