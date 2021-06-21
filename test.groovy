@@ -16,7 +16,7 @@ kubeNode(
 
   stage('Build') {
       dir('jenkins-k8s-slave') {
-            def  my-image = docker.build("$imagename")
+            myimage = docker.build("$imagename")
       }
     }
 }
