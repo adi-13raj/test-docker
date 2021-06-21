@@ -1,5 +1,4 @@
 //label = "jenkins-node-${UUID.randomUUID().toString()}"
-@Library('shared-jenkins-libraries') _
 
 kubeNode(
   containers: [containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true)],
