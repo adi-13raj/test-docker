@@ -23,4 +23,3 @@ container('docker') {
       }
 }
 }
-}
