@@ -1,6 +1,6 @@
 //label = "jenkins-node-${UUID.randomUUID().toString()}"
 
-Node(
+node(
   containers: [containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true)],
   volumes: [
     //hostPathVolume(mountPath: '/home/jenkins/.docker/', hostPath: '/home/jenkins/.docker/'),
