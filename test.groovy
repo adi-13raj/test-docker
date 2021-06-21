@@ -1,7 +1,7 @@
 label = "jenkins-node-${UUID.randomUUID().toString()}"
 
 kubeNode(
-  containers: [containerTemplates.docker()],
+  containers: [containerTemplates.docker(name: 'docker', image: 'docker:latest', command: 'cat')],
   volumes: [
     //hostPathVolume(mountPath: '/home/jenkins/.docker/', hostPath: '/home/jenkins/.docker/'),
     //hostPathVolume(mountPath: '/usr/bin/docker', hostPath: '/usr/bin/docker'),
@@ -16,9 +16,7 @@ kubeNode(
 
   stage('Build') {
       dir('jenkins-k8s-slave') {
-        container('jnlp') {
             def  my-image = docker.build("$imagename")
-        }
       }
     }
 }
