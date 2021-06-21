@@ -10,6 +10,7 @@ node {
             echo "$imagename"
             sh """
             echo "hello this is testing"
+            docker --version
             """
 
         }
